@@ -1,0 +1,23 @@
+plugins {
+    id 'java'
+}
+
+group 'com.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Vulnerable version of log4j
+    implementation 'log4j:log4j:1.2.17'
+
+    // Vulnerable version of jackson-databind (known CVE-2020-36518)
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.9.10.1'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
